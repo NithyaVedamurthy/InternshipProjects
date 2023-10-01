@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+    <body>
+        <br>
+        <header>
+            <a href="#Home">Home</a><span class="tab"></span>
+            <a href="#About">About</a><span class="tab"></span>
+            <a href="#Resume">Resume</a><span class="tab"></span>
+            <a href="#Cont">Contact</a><span class="tab2"></span>
+        </header>
+        <br>
+        <br>
+    <div id="Home">
+        <canvas id="myCanvas"></canvas>
+        <img id="scream" width="300" height="345" src="profile1.jpeg" alt="The Scream">
+            <script id="ho">
+            const c1 = document.getElementById("myCanvas");
+            const ctx = c1.getContext("2d");
+            const img = document.getElementById("scream");
+            ctx.font = "15pt Arial";
+            ctx.fillStyle='white';
+            ctx.drawImage(img,200, 200);
+            ctx.fillText("Hello!!",30,50);
+            ctx.font = "10pt Arial";
+            ctx.fillText("My name is",30,80);
+            ctx.font = "30pt Arial";
+            ctx.fillText("Nithya",30,110);
+            ctx.font = "10pt Arial";
+            ctx.fillText("I am a student from Bangalore",30,140);
+            </script>
+    </div>
+    <div>
+        <span class="tab5"></span>
+    </div>
+    <hr>
+    <div id="About">
+        <br>
+        <img src="download.jpeg" id="abt" style=" border-radius: 50%; width: 450px;" align="left">
+        <span class="tab3"></span>
+            <h2><b>&emsp;About me</b></h2>
+            <p>&emsp;I am Nithya currently pursuing my Engineering degree in <b>Computer Science and Engineering (CSE)</b> from New Horizon College of Engineering.<br>
+            I take keen interest in learning new things and discovering solutions to problems.</p><br>
+            <a href="pro.html">
+            <button id="pro" class="btn btn-primary btn-lg" >Projects</button><span class="tab"></span>
+            </a>
+            <a href="edu.html">
+                <button id="edu" class="btn btn-primary btn-lg">Education</button>
+            </a>
+    </div>
+    <div>
+        <span class="tab5"></span>
+    </div>
+    <div>
+        <span class="tab5"></span>
+    </div><hr>
+    <div>
+        <span class="tab5"></span>
+    </div>
+    <div id="Resume">
+        <img src="resume.jpg" id="abt" style=" border-radius: 50%; width: 450px;" align="left">
+        <span class="tab3"></span>
+        <h2><b>Resume</b></h2>
+        <p>Click here to view the complete Resume</p>
+        <a href="port.html">
+            <button id="res" class="btn btn-primary btn-lg" >Resume</button>
+            </a>
+    </div>
+    <div>
+        <span class="tab5"></span>
+    </div>
+    <div>
+        <span class="tab5"></span>
+    </div><hr>
+    <div>
+        <span class="tab5"></span>
+    </div>
+    <div id="Cont">
+        <span class="tab4"></span>
+        <h2>Contact details</h2>
+        <br>
+        <p>Phone no.: +91 7975943926</p>
+        <p>Gmail: nithyarv2003@gmail.com</p>
+        <br>
+    </div>
+    <div>
+        <span class="tab5"></span>
+    </div>
+    </body>
+</html>
