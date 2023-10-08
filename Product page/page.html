@@ -1,0 +1,187 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css" >
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <section class="page">
+            <div class="column">
+            <div class="slideshow-container" style="align-items: center;">
+                <div class="split left">
+    
+                <div class="mySlides fade">
+                    <img src="s1.jpeg" style="width:80%; height: 120%;">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="s6.jpeg" style="width:80%; height: 120%;">
+                </div>
+                
+                <div class="mySlides fade" >
+                    <img src="s4.jpg" style="width:80%; height: 120%;">
+                </div>
+                <br>
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"><img class="dot" src="s1.jpeg"></span>
+                    <span class="dot" onclick="currentSlide(2)"><img class="dot" src="s6.jpeg"></span>
+                    <span class="dot" onclick="currentSlide(3)"><img class="dot" src="s4.jpg"></span>
+                </div>
+                <br>
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+                </div>
+            </div>
+            </div>
+    
+                <div class="column">
+                    <h1>House of cards <a href="https://en.wikipedia.org/wiki/Sudha_Murty" style="font-size: small;"> Sudha Murthy</a></h1>
+                    <h3>Rs.150</h3>
+                    <label for="quantity"><h4>Quantity:</h4</label>
+    <input type="number" id="quantity" value="1" min="1">
+                        <h4>Rating</h4>
+                        <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+                    <h4>Description</h4>
+                    <p>House of Cards is the story of Mridula, a bright young woman with enormous enthusiasm for life who hails from a Karnataka village. A chance meeting with Sanjay, a talented but impoverished doctor, leads to love and the couple marry and settle in Bangalore. The more Mridula sees of the world, the more she realizes how selfish and materialistic people can be, but she does not take the ups and downs of life to heart and lives each day with positive energy. Trouble brews when Sanjay quits his government job and starts an immensely successful private practice. With affluence comes the neverending ambition for more and the inevitable slide into corrupt practices. For a long time, Mridula has no idea that Sanjay has sold his soul. When the truth hits her, she has no recourse but to walk out on him, but can she really find a space of her own? This intricately woven novel explores human relationships in telling detail and holds up a mirror to our society with candour and with conviction.</p>
+                    <div>
+                        <button onclick="myFunction()" id="addToCartButton">Add to Cart</button>
+                        <a href="#cart">
+                            <button  id="vw" class="btn btn-primary btn-lg" >View cart</button>
+                        </a>
+                    </div>
+                    <br>
+                </div>
+            </div>
+
+        </section>
+        <script>
+            function myFunction() {
+                alert("Item added to cart");
+            }
+            </script>
+        
+            <script>
+                let slideIndex = 1;
+                showSlides(slideIndex);
+                
+                function plusSlides(n) {
+                    showSlides(slideIndex += n);
+                }
+                
+                function currentSlide(n) {
+                    showSlides(slideIndex = n);
+                }
+                
+                function showSlides(n) {
+                    let i;
+                    let slides = document.getElementsByClassName("mySlides");
+                    let dots = document.getElementsByClassName("dot");
+                    if (n > slides.length) {slideIndex = 1}
+                    if (n < 1) {slideIndex = slides.length}
+                    for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                    slides[slideIndex-1].style.display = "block";
+                    dots[slideIndex-1].className += " active";
+                }
+                </script>
+                <div>
+            <span class="tab3"></span>
+        </div>
+                <div class="detail">
+                    <hr>
+                    <h4>From the publisher</h4>
+                    <img src="p1.jpg" style="width: 90%;height: 40%;"><br><hr>
+                    <img src="p2.jpg" style="width: 90%;height: 40%;"><br><hr>
+                    <img src="p3.jpg" style="width: 90%;height: 40%;">
+                    <hr>
+                    <h4><u>Product details</u></h4>
+                    
+                    <p><b>Publisher: </b> Penguin India;1st edition</p>
+                    <p><b>Language: </b> English</p>
+                    <p><b>Paperback: </b> 288 pages</p>
+                    <p><b>ISBN-10: </b>43420364</p>
+                    <p><b>ISBN-13: </b>78-0143420361</p>
+                    <p><b>Reading age: </b>7-14</p>
+                    <p><b>Item weight: </b>181g</p>
+                    <p><b>Dimensions: </b>12.7 x 1052x 20.32 cm</p>
+                    <p><b>Country of Origin: </b>India</p>
+                    <p><b>Generic Name: </b>Books</p>
+                    <br>
+                </div>
+                <div>
+                    <span class="tab3"></span>
+                </div>
+                <hr>
+                <div id="cart">
+                    <h2>Your Cart</h2>
+                    <div id="cartItems"></div>
+                    <p>Total Price: Rs.<span id="cartTotal">0.00</span></p>
+                </div>
+                
+                <script>
+                    // JavaScript to handle adding the item to the cart and displaying it
+        document.getElementById("addToCartButton").addEventListener("click", function() {
+            // You can perform various actions here, such as:
+            
+            // 1. Creating a cart item object with variations and quantity
+            const quantity = parseInt(document.getElementById("quantity").value, 10);
+            
+            if (quantity < 1) {
+                alert("Please enter a valid quantity.");
+                return;
+            }
+            
+            const product = {
+                name: "House of cards",
+                price: 150.00, // Base price
+                quantity: quantity,
+                image: "s6.jpeg" // URL to the product image
+            };
+            
+            // 2. Adding the item to the cart (you can use an array to simulate a cart)
+            const cart = [];
+            cart.push(product);
+            
+            // 3. Updating the cart display
+            updateCartDisplay(cart);
+        });
+        
+        
+        // Function to update the cart display
+        function updateCartDisplay(cart) {
+            const cartItemsElement = document.getElementById("cartItems");
+            const cartTotalElement = document.getElementById("cartTotal");
+            
+            cartItemsElement.innerHTML = ""; // Clear the previous cart items
+            
+            let total = 0;
+            cart.forEach(item => {
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" style="position:absolute;left:20;top:2550  ;width:200">
+                    ${item.name} - Rs.${(item.price).toFixed(2)} x ${item.quantity}
+                `;
+                cartItemsElement.appendChild(li);
+
+                total += item.price * item.quantity;
+            });
+            
+            cartTotalElement.textContent = total.toFixed(2);
+        }
+                </script>
+            <div>
+                <a href="#">
+                    <button  id="vw" class="btn btn-primary btn-lg" >Buy now</button>
+                </a>
+            </div>
+    </body>
+</html>
